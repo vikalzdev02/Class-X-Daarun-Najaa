@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas X - Website Resmi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+    html {
+        overflow-x: hidden;
+    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar-hidden {
+            transform: translateX(-100%);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+        
+  .hero-scene {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #dceffc;
+}
+
+
+.cloud {
+  position: absolute;
+  top: 30%;
+  width: 400px; 
+  z-index: 1;
+  transition: transform 0.4s ease;
+  opacity: 0.9;
+  pointer-events: none; 
+}
+
+
+.cloud.left {
+  left: -200px;
+}
+
+
+.cloud.right {
+  right: -200px;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #1f2937;
+  margin-top: 35vh;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.hero-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.hero-text p {
+  font-family: 'Tahoma', sans-serif;
+  font-size: 1.5rem;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50 sidebar sidebar-hidden">
+        <div class="p-5">
+            <h2 class="text-2xl font-bold text-gray-800">Kelas X</h2>
+            <button id="closeSidebar" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="mt-5">
+            <a href="#home" class="block py-2 px-5 text-gray-600 hover:bg-gray-100 nav-link">Home</a>
+            <a href="#struktur" class="block py-2 px-5 text-gray-600 hover:bg-gray-100 nav-link">Struktur Kelas</a>
+            <a href="#piket" class="block py-2 px-5 text-gray-600 hover:bg-gray-100 nav-link">Jadwal Piket</a>
+            <a href="#jadwal" class="block py-2 px-5 text-gray-600 hover:bg-gray-100 nav-link">Jadwal Pelajaran</a>
+            <a href="#galeri" class="block py-2 px-5 text-gray-600 hover:bg-gray-100 nav-link">Galeri</a>
+            <a href="#pengumuman" class="block py-2 px-5 text-gray-600 hover:bg-gray-100 nav-link">Pengumuman</a>
+            <a href="#dokumentasi" class="block py-2 px-5 text-gray-600 hover:bg-gray-100 nav-link">Dokumentasi</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4 shadow-lg">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <button id="openSidebar" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <h1 class="text-2xl font-bold">Website Kelas X</h1>
+            </div>
+        </header>
+        <section id="scrollTarget" class="hero-scene relative overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-bottom z-0" style="background-image: url('https://j.top4top.io/p_3482on0zt0.jpg'); background-size: cover;"></div>
+
+  <img src="https://i.imghippo.com/files/tRs9511Ogg.png" class="cloud left" id="cloudLeft" alt="Awan Kiri">
+  <img src="https://i.imghippo.com/files/tRs9511Ogg.png" class="cloud right" id="cloudRight" alt="Awan Kanan">
+
+  <div class="hero-text" id="heroText">
+    <h1>Website Kelas X</h1>
+    <p>MA Daarun Najaa</p>
+  </div>
+</section>
+        <!-- Home Section -->
+        <section id="home" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Selamat Datang di Kelas X</h2>
+                <p class="text-lg text-gray-600 mb-8">Kami adalah kelas yang penuh semangat, kreativitas, dan solidaritas. Bersama, kami belajar, berkembang, dan menciptakan kenangan indah!</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="zoom-in" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-gray-800">Prestasi</h3>
+                        <p class="text-gray-600">Belum Ada Prestasi</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="zoom-in" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-gray-800">Kegiatan</h3>
+                        <p class="text-gray-600">Belum ada kegiatan (awal).</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="zoom-in" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-gray-800">grup</h3>
+                        <p class="text-gray-600"><a href="wa.me/">Grup Kelas</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Struktur Kelas Section -->
+        <section id="struktur" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-aos="fade-up">Struktur Kelas</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="flip-left">
+                        <h3 class="text-xl font-semibold text-gray-800">Ketua</h3>
+                        <p class="text-gray-600">Nama: Belum di tentukan</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-gray-800">Wakil</h3>
+                        <p class="text-gray-600">Nama: Belum di tentukan</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-gray-800">Sekretaris</h3>
+                        <p class="text-gray-600">Nama: Belum di tentukan</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="flip-left" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-gray-800">Bendahara</h3>
+                        <p class="text-gray-600">Nama: Belum Di tentukan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jadwal Piket Section -->
+        <section id="piket" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-aos="fade-up">Jadwal Piket</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                        <thead>
+                            <tr class="bg-blue-500 text-white">
+                                <th class="py-3 px-4 text-left">Hari</th>
+                                <th class="py-3 px-4 text-left">Nama</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    <tr class="border-b">
+        <td class="py-3 px-4">Senin</td>
+        <td class="py-3 px-4">Winda, Tahya, Zuhruf, Haikal</td>
+    </tr>
+    <tr class="border-b">
+        <td class="py-3 px-4">Selasa</td>
+        <td class="py-3 px-4">Amel, Yongky, Belly</td>
+    </tr>
+    <tr class="border-b">
+        <td class="py-3 px-4">Rabu</td>
+        <td class="py-3 px-4">Sindy, Habibi, Roy, Suhendra</td>
+    </tr>
+    <tr class="border-b">
+        <td class="py-3 px-4">Kamis</td>
+        <td class="py-3 px-4">Oktari, Reza, Arvian</td>
+    </tr>
+    <tr class="border-b">
+        <td class="py-3 px-4">Jumat</td>
+        <td class="py-3 px-4">Nurosita, sahrul, Satria, Ikrar</td>
+    </tr>
+    <tr>
+        <td class="py-3 px-4">Sabtu</td>
+        <td class="py-3 px-4">Aulia, Djidan, Rizky</td>
+    </tr>
+</tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jadwal Pelajaran Section -->
+        <section id="jadwal" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-aos="fade-up">Jadwal Pelajaran</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Senin</h3>
+                        <ul class="text-gray-600">
+                            <li>Sejarah Indonesia</li>
+                            <li>PJOK</li>
+                            <li>Sejarah</li>
+                            <li>PKWU</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Selasa</h3>
+                        <ul class="text-gray-600">
+                            <li>Alqur'an Hadist</li>
+                            <li>Aswaja</li>
+                            <li>SKI</li>
+                            <li>Fikih</li>
+                            <li>Sosiologi</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Rabu</h3>
+                        <ul class="text-gray-600">
+                            <li>PKN</li>
+                            <li>B.Arab</li>
+                            <li>Project</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Kamis</h3>
+                        <ul class="text-gray-600">
+                            <li>Geografi</li>
+                            <li>Aqidah Ahlaq</li>
+                            <li>Informatika</li>
+                            <li>Fisika</li>
+                            <li>Ekonomi</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Jam'at</h3>
+                        <ul class="text-gray-600">
+                            <li>Ibadah Amaliyah</li>
+                            <li></li>
+                            <li>B.Ingriss</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Sabtu</h3>
+                        <ul class="text-gray-600">
+                            <li>Seni Budaya</li>
+                            <li>B.Indonesia</li>
+                            <li>Matematika</li>
+                            <li>Pramuka</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder for Other Pages -->
+        <section id="galeri" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Galeri</h2>
+                <p class="text-gray-600">Belum ada foto bersama kelas X</p>
+            </div>
+        </section>
+
+        <section id="pengumuman" class="py-16">
+            <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Pengumuman</h2>
+                <p class="text-gray-600">Nanti pengumuman kelas ada disini!.</p>
+            </div>
+        </section>
+
+        <section id="dokumentasi" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Dokumentasi</h2>
+                <p class="text-gray-600">Ini adalah untuk dokumentasi kelas (Belum Ada).</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Kelas X. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Modal Sambutan -->
+<div id="welcomeModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg p-6 max-w-md text-center animate-fade-in">
+    <h2 class="text-2xl font-bold mb-2 text-gray-800">Selamat Datang!</h2>
+    <p class="text-gray-600 mb-4">Terima kasih sudah mengunjungi Website Kelas X - MA Daarun Najaa.</p>
+    <button onclick="closeWelcome()" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
+      Oke, lanjut!
+    </button>
+  </div>
+</div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        const openSidebar = document.getElementById('openSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const sidebar = document.getElementById('sidebar');
+
+        openSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('sidebar-hidden');
+        });
+
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.add('sidebar-hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                sidebar.classList.add('sidebar-hidden');
+            });
+        });
+        // Scroll effect for hero
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const text = document.getElementById('heroText');
+  const cloudLeft = document.getElementById('cloudLeft');
+  const cloudRight = document.getElementById('cloudRight');
+
+  // Hero text fades and moves up
+  text.style.opacity = 1 - scrollY / 300;
+  text.style.transform = `translateY(-${scrollY * 0.3}px)`;
+
+  // Clouds move up & inward
+  cloudLeft.style.transform = `translateY(-${scrollY * 0.4}px) translateX(${scrollY * 0.2}px)`;
+  cloudRight.style.transform = `translateY(-${scrollY * 0.4}px) translateX(-${scrollY * 0.2}px)`;
+});
+
+  // Scroll langsung ke bawah saat load
+  window.addEventListener('load', () => {
+    const modal = document.getElementById('welcomeModal');
+    modal.classList.remove('hidden');
+
+    // Scroll ke bawah setelah render, supaya bukan di bagian hero
+    setTimeout(() => {
+      window.scrollTo({ top: 600, behavior: 'instant' }); // atur sesuai tinggi hero
+    }, 10);
+  });
+
+  // Ketika klik tombol 'Oke'
+  function closeWelcome() {
+    const modal = document.getElementById('welcomeModal');
+    modal.classList.add('hidden');
+
+    // Scroll ke atas ke bagian hero/awan
+    const target = document.getElementById('scrollTarget');
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+
+    </script>
+</body>
+</html>
