@@ -394,7 +394,7 @@ window.addEventListener('scroll', () => {
   // Ketika klik tombol 'Oke'
   function closeWelcome() {
     const modal = document.getElementById('welcomeModal');
-    modal.classList.add('hidden');
+    modal.style.display = 'none';
 
     // Scroll ke atas ke bagian hero/awan
     const target = document.getElementById('scrollTarget');
